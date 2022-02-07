@@ -4,6 +4,10 @@ import pandas as pd
 import numpy as np
 import os
 import json
+import matplotlib.pyplot as plt
+import warnings
+warnings.filterwarnings("ignore")
+from collections import defaultdict
 
 def get_data(filepath):
     '''
@@ -22,6 +26,9 @@ def get_data(filepath):
     
     # loop through all files in test/testdata
     for filename in os.listdir(filepath):
+        if filename == '.ipynb_checkpoints':
+            continue
+            
         # create the sql connection
         cnx = sqlite3.connect(filepath + filename)
 
@@ -29,13 +36,18 @@ def get_data(filepath):
         sub_df_string = pd.read_sql_query("SELECT * FROM COUNTERS_STRING_TIME_DATA", cnx)
         sub_df_ull = pd.read_sql_query("SELECT * FROM COUNTERS_ULL_TIME_DATA", cnx)
 
+        # append "Start Row"
+        first_row_string = sub_df_string.loc[0]
+        new_row_string = pd.DataFrame({'MEASUREMENT_TIME': first_row_string[0], 'ID_INPUT': first_row_string[1], 'VALUE': 's0', 'PRIVATE_DATA': 0}, index =[0])
+        sub_df_string = pd.concat([new_row_string, sub_df_string]).reset_index(drop=True)
+        
         # append the informations
         appended_data_string.append(sub_df_string)
         appended_data_ull.append(sub_df_ull)
 
     # converting into 2 dataframes
-    df_string = pd.concat(appended_data_string)
-    df_ull = pd.concat(appended_data_ull)
+    df_string = pd.concat(appended_data_string, ignore_index = True)
+    df_ull = pd.concat(appended_data_ull, ignore_index = True)
     
     # preprocess the data
     df_string = preprocess(df_string)
@@ -46,6 +58,7 @@ def get_data(filepath):
         return df_string, df_ull
     
     # something went wrong!
+    print('Data Processing Error')
     return None
 
 
@@ -55,6 +68,10 @@ def preprocess(df):
     '''
     df['MEASUREMENT_TIME'] = pd.to_datetime(df['MEASUREMENT_TIME'])
     df['PRIVATE_DATA'] = df['PRIVATE_DATA'].astype(int)
+    
+    if test_dataframe_string(df):
+        df = df[df['ID_INPUT'] == 3]
+        df['VALUE'] = df['VALUE'].str.lower()
     
     return df
 
@@ -66,7 +83,7 @@ def test_dataframe_string(df):
     dtypes = df.dtypes
     
     # columns should be date time, integer, string, then integer
-    if dtypes[0] == '<M8[ns]' and dtypes[1] == 'int64' and dtypes[2] == 'object' and dtypes[3] == 'int64':
+    if dtypes[0] == 'datetime64[ns]' and dtypes[1] == 'int64' and dtypes[2] == 'object' and dtypes[3] == 'int32':
         return True
     
     return False
@@ -80,7 +97,7 @@ def test_dataframe_ull(df):
     dtypes = df.dtypes
     
     # columns should be date time, integer, integer, then integer
-    if dtypes[0] == '<M8[ns]' and dtypes[1] == 'int64' and dtypes[2] == 'int64' and dtypes[3] == 'int64':
+    if dtypes[0] == 'datetime64[ns]' and dtypes[1] == 'int64' and dtypes[2] == 'int64' and dtypes[3] == 'int32':
         return True
     
     return False
