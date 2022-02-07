@@ -10,6 +10,7 @@ import json
 sys.path.insert(0, 'src/data')
 
 from get_data import get_data
+from model import model
 
 def main(targets):
     '''
@@ -22,8 +23,10 @@ def main(targets):
             data_cfg = json.load(fh)
 
         # make the data target
-        data = get_data(**data_cfg)
-        print("variable 'data' has been loaded with 2 dataframes")
+        string_df, string_ull = get_data(**data_cfg)
+        
+    if 'model' in targets:
+        model = model(string_df)
 
 
 if __name__ == '__main__':
