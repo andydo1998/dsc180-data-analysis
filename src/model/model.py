@@ -10,7 +10,7 @@ import warnings
 warnings.filterwarnings("ignore")
 from collections import defaultdict
 
-def getPred(numExe, start='s0'):
+def getPred(numExe, pairProb, start='s0'):
     """
     Predicts laptop foreground window for a specfied number of exe and starting exe
     """
@@ -28,7 +28,7 @@ def getPred(numExe, start='s0'):
         pred.append(new_exe)
     return pred
 
-def model(data):
+def model(df):
     """
     
     """
@@ -53,14 +53,15 @@ def model(data):
     for pair in pairCountTrain:
         b_count = sum(X_train == pair[0])
         pairProb[pair] = pairCountTrain[pair] / b_count # divides counts by number of pairs for the first exe ('B' in P(A|B))
+        
+    exes = df['VALUE'].unique()
 
-
-    f = open('output.txt', 'w')
+    f = open('outputs/output.txt', 'w')
 
     f.write('Input Exe  Predicted Exe \n')
 
     for exe in exes:
-        prediction = getPred(2, exe)
+        prediction = getPred(2, pairProb, exe)
         string = exe + ', ' + prediction[1] + '\n'
         f.write(string)
 
