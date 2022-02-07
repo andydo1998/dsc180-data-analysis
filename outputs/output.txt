@@ -8,13 +8,13 @@ chrome.exe, zoom.exe
 mcuicnt.exe, chrome.exe
 zoom.exe, chrome.exe
 discord.exe, chrome.exe
-shellexperiencehost.exe, discord.exe
+shellexperiencehost.exe, explorer.exe
 msedge.exe, teams.exe
-origin.exe, explorer.exe
-microsoft.aad.brokerplugin.exe, explorer.exe
-utility.exe, explorer.exe
+origin.exe, mcuicnt.exe
+microsoft.aad.brokerplugin.exe, chrome.exe
+utility.exe, vpnui.exe
 vpnui.exe, chrome.exe
-docker desktop.exe, microsoft.aad.brokerplugin.exe
+docker desktop.exe, explorer.exe
 searchapp.exe, explorer.exe
 devenv.exe, teams.exe
 code.exe, explorer.exe
@@ -22,20 +22,20 @@ startmenuexperiencehost.exe, searchapp.exe
 mintty.exe, explorer.exe
 razer synapse service process.exe, eadesktop.exe
 onedrive.exe, explorer.exe
-lockapp.exe, chrome.exe
-xboxinstaller.exe, applicationframehost.exe
-applicationframehost.exe, msedgewebview2.exe
-xboxidp.exe, shellexperiencehost.exe
+lockapp.exe, explorer.exe
+xboxinstaller.exe, chrome.exe
+applicationframehost.exe, explorer.exe
+xboxidp.exe, xboxpcapp.exe
 xboxpcapp.exe, chrome.exe
 accountscontrolhost.exe, chrome.exe
 clustertruck.exe, admin app
-admin app, admin app
+admin app, searchapp.exe
 werfault.exe, clustertruck.exe
-systemsettings.exe, explorer.exe
+systemsettings.exe, shellexperiencehost.exe
 mccwinstore-win64-shipping.exe, rundll32.exe
 rundll32.exe, systemsettings.exe
 donutcounty.exe, searchapp.exe
-alertviewer.exe, zoom.exe
+alertviewer.exe, chrome.exe
 uihost.exe, chrome.exe
 db browser for sqlite.exe, explorer.exe
 time.exe, chrome.exe
@@ -45,12 +45,12 @@ msedgewebview2.exe, zoom.exe
 dbfighterz.exe, steamwebhelper.exe
 red-win64-shipping.exe, searchapp.exe
 eadesktopinstaller.exe, admin app
-eadesktop.exe, eadesktop.exe
-peggle.exe, chrome.exe
+eadesktop.exe, chrome.exe
+peggle.exe, microsoft.aad.brokerplugin.exe
 installer.exe, chrome.exe
 ts4_x64.exe, searchapp.exe
-taskmgr.exe, explorer.exe
+taskmgr.exe, chrome.exe
 screenclippinghost.exe, chrome.exe
 razer synapse 3.exe, chrome.exe
-razer central.exe, chrome.exe
+razer central.exe, razer synapse 3.exe
 git-cmd.exe, chrome.exe

@@ -69,6 +69,7 @@ def preprocess(df):
     df['MEASUREMENT_TIME'] = pd.to_datetime(df['MEASUREMENT_TIME'])
     df['PRIVATE_DATA'] = df['PRIVATE_DATA'].astype(int)
     
+    # We are currently focusing the string df
     if test_dataframe_string(df):
         df = df[df['ID_INPUT'] == 3]
         df['VALUE'] = df['VALUE'].str.lower()
