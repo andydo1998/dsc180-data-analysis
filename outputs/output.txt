@@ -18,13 +18,14 @@ docker desktop.exe, microsoft.aad.brokerplugin.exe
 searchapp.exe, explorer.exe
 devenv.exe, teams.exe
 code.exe, explorer.exe
-startmenuexperiencehost.exe, searchapp.exe
+startmenuexperiencehost.exe, s0
 mintty.exe, explorer.exe
-razer synapse service process.exe, eadesktop.exe
+razer synapse service process.exe, teams.exe
 onedrive.exe, explorer.exe
 lockapp.exe, chrome.exe
 xboxinstaller.exe, applicationframehost.exe
 applicationframehost.exe, msedgewebview2.exe
+<<<<<<< Updated upstream
 xboxidp.exe, shellexperiencehost.exe
 xboxpcapp.exe, chrome.exe
 accountscontrolhost.exe, chrome.exe
@@ -33,6 +34,16 @@ admin app, admin app
 werfault.exe, clustertruck.exe
 systemsettings.exe, explorer.exe
 mccwinstore-win64-shipping.exe, rundll32.exe
+=======
+xboxidp.exe, xboxpcapp.exe
+xboxpcapp.exe, chrome.exe
+accountscontrolhost.exe, chrome.exe
+clustertruck.exe, xboxpcapp.exe
+admin app, searchapp.exe
+werfault.exe, clustertruck.exe
+systemsettings.exe, shellexperiencehost.exe
+mccwinstore-win64-shipping.exe, explorer.exe
+>>>>>>> Stashed changes
 rundll32.exe, systemsettings.exe
 donutcounty.exe, searchapp.exe
 alertviewer.exe, zoom.exe
@@ -46,7 +57,11 @@ dbfighterz.exe, steamwebhelper.exe
 red-win64-shipping.exe, searchapp.exe
 eadesktopinstaller.exe, admin app
 eadesktop.exe, eadesktop.exe
+<<<<<<< Updated upstream
 peggle.exe, chrome.exe
+=======
+peggle.exe, microsoft.aad.brokerplugin.exe
+>>>>>>> Stashed changes
 installer.exe, chrome.exe
 ts4_x64.exe, searchapp.exe
 taskmgr.exe, explorer.exe
