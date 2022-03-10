@@ -19,4 +19,5 @@ python run.py test
 For more information, please read our report, the pdf file on the repository, for a more in depth explanation of the process.
 
 A visual presentation can also be viewed here: https://www.youtube.com/watch?v=2h5k6alz3WU
+
 (note that to retrieve the most amount of information, please view the report, as the video only provides a summary of our process)
