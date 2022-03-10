@@ -69,7 +69,6 @@ def preprocess(df):
     df['MEASUREMENT_TIME'] = pd.to_datetime(df['MEASUREMENT_TIME'])
     df['PRIVATE_DATA'] = df['PRIVATE_DATA'].astype(int)
     
-    # We are currently focusing the string df
     if test_dataframe_string(df):
         df = df[df['ID_INPUT'] == 3]
         df['VALUE'] = df['VALUE'].str.lower()
@@ -84,7 +83,7 @@ def test_dataframe_string(df):
     dtypes = df.dtypes
     
     # columns should be date time, integer, string, then integer
-    if dtypes[0] == 'datetime64[ns]' and dtypes[1] == 'int64' and dtypes[2] == 'object' and (dtypes[3] == 'int32' or dtypes[3] == 'int64'):
+    if dtypes[0] == 'datetime64[ns]' and dtypes[1] == 'int64' and dtypes[2] == 'object' and dtypes[3] == 'int32':
         return True
     
     return False
@@ -98,7 +97,7 @@ def test_dataframe_ull(df):
     dtypes = df.dtypes
     
     # columns should be date time, integer, integer, then integer
-    if dtypes[0] == 'datetime64[ns]' and dtypes[1] == 'int64' and dtypes[2] == 'int64' and (dtypes[3] == 'int32' or dtypes[3] == 'int64'):
+    if dtypes[0] == 'datetime64[ns]' and dtypes[1] == 'int64' and dtypes[2] == 'int64' and dtypes[3] == 'int32':
         return True
     
     return False
