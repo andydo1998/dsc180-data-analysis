@@ -1,4 +1,0 @@
-{
-    "dockerhub-id": "andydo1998/dsc180-methodology-5",
-    "build-script": "python run.py data"
-}
