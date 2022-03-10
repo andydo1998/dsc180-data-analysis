@@ -8,34 +8,45 @@ chrome.exe, zoom.exe
 mcuicnt.exe, chrome.exe
 zoom.exe, chrome.exe
 discord.exe, chrome.exe
-shellexperiencehost.exe, explorer.exe
+shellexperiencehost.exe, discord.exe
 msedge.exe, teams.exe
-origin.exe, mcuicnt.exe
-microsoft.aad.brokerplugin.exe, chrome.exe
-utility.exe, vpnui.exe
+origin.exe, explorer.exe
+microsoft.aad.brokerplugin.exe, explorer.exe
+utility.exe, explorer.exe
 vpnui.exe, chrome.exe
-docker desktop.exe, explorer.exe
+docker desktop.exe, microsoft.aad.brokerplugin.exe
 searchapp.exe, explorer.exe
 devenv.exe, teams.exe
 code.exe, explorer.exe
-startmenuexperiencehost.exe, searchapp.exe
+startmenuexperiencehost.exe, s0
 mintty.exe, explorer.exe
-razer synapse service process.exe, eadesktop.exe
+razer synapse service process.exe, teams.exe
 onedrive.exe, explorer.exe
-lockapp.exe, explorer.exe
-xboxinstaller.exe, chrome.exe
-applicationframehost.exe, explorer.exe
-xboxidp.exe, xboxpcapp.exe
+lockapp.exe, chrome.exe
+xboxinstaller.exe, applicationframehost.exe
+applicationframehost.exe, msedgewebview2.exe
+<<<<<<< Updated upstream
+xboxidp.exe, shellexperiencehost.exe
 xboxpcapp.exe, chrome.exe
 accountscontrolhost.exe, chrome.exe
 clustertruck.exe, admin app
+admin app, admin app
+werfault.exe, clustertruck.exe
+systemsettings.exe, explorer.exe
+mccwinstore-win64-shipping.exe, rundll32.exe
+=======
+xboxidp.exe, xboxpcapp.exe
+xboxpcapp.exe, chrome.exe
+accountscontrolhost.exe, chrome.exe
+clustertruck.exe, xboxpcapp.exe
 admin app, searchapp.exe
 werfault.exe, clustertruck.exe
 systemsettings.exe, shellexperiencehost.exe
-mccwinstore-win64-shipping.exe, rundll32.exe
+mccwinstore-win64-shipping.exe, explorer.exe
+>>>>>>> Stashed changes
 rundll32.exe, systemsettings.exe
 donutcounty.exe, searchapp.exe
-alertviewer.exe, chrome.exe
+alertviewer.exe, zoom.exe
 uihost.exe, chrome.exe
 db browser for sqlite.exe, explorer.exe
 time.exe, chrome.exe
@@ -45,12 +56,16 @@ msedgewebview2.exe, zoom.exe
 dbfighterz.exe, steamwebhelper.exe
 red-win64-shipping.exe, searchapp.exe
 eadesktopinstaller.exe, admin app
-eadesktop.exe, chrome.exe
+eadesktop.exe, eadesktop.exe
+<<<<<<< Updated upstream
+peggle.exe, chrome.exe
+=======
 peggle.exe, microsoft.aad.brokerplugin.exe
+>>>>>>> Stashed changes
 installer.exe, chrome.exe
 ts4_x64.exe, searchapp.exe
-taskmgr.exe, chrome.exe
+taskmgr.exe, explorer.exe
 screenclippinghost.exe, chrome.exe
 razer synapse 3.exe, chrome.exe
-razer central.exe, razer synapse 3.exe
+razer central.exe, chrome.exe
 git-cmd.exe, chrome.exe
